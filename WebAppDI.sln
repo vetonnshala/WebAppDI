@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDI", "WebAppDI\WebAppDI.csproj", "{08B86E79-6AAA-4909-9C47-702B1EB87CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDILib", "WebAppDILib\WebAppDILib.csproj", "{FC4BDB86-D665-4D5A-8986-3B2C76F6430D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppDILib", "WebAppDILib\WebAppDILib.csproj", "{FC4BDB86-D665-4D5A-8986-3B2C76F6430D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{670827CF-56CA-4C2E-AD55-8BADFFD5CF22}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
