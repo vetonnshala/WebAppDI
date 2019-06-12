@@ -23,8 +23,9 @@ jobs:
     inputs:
       solution: $(projectName).sln
       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+      platform: $(buildPlatform)
+      configuration: $(buildConfiguration)
+      restoreNugetPackages: true
   
   - task: PublishSymbols@2
     displayName: 'Publish symbols path'
@@ -34,8 +35,8 @@ jobs:
 
   - task: VSTest@2
     inputs:
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+      platform: $(buildPlatform)
+      configuration: $(buildConfiguration)
 
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
