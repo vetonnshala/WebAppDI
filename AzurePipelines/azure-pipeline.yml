@@ -1,5 +1,5 @@
 trigger:
-- updates/add-pipeline
+- master
 
 resources:
 - repo: self
