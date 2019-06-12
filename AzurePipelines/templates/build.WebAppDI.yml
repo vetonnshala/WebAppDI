@@ -14,9 +14,10 @@ jobs:
 
   - task: NuGetToolInstaller@0
     
-  - task: NuGetCommand@2        #NuGetCommand task can be removed if csproj is moved over to include PackageReferences
-    inputs:
-      restoreSolution: $(projectName).sln
+  #task is commented out as we have moved the csproj over to use PackageReferences
+  #- task: NuGetCommand@2
+  #  inputs:
+  #    restoreSolution: $(projectName).sln
   
   - task: VSBuild@1
     inputs:
