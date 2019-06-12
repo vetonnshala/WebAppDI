@@ -21,7 +21,7 @@ jobs:
   - task: VSBuild@1
     inputs:
       solution: $(projectName).sln
-      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).$(buildConfiguration).zip"'
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
   
