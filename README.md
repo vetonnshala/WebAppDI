@@ -24,3 +24,5 @@ The general steps I took to get DI working are as follows;
 The critical code is in Startup.cs and in the Controller constructors which is where the dependency injection magic happens!
 
 Hope this helps...
+
+[![Build Status](https://dev.azure.com/f2calv/github/_apis/build/status/f2calv.WebAppDI?branchName=master)](https://dev.azure.com/f2calv/github/_build/latest?definitionId=1&branchName=master)
