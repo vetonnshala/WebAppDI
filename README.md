@@ -35,4 +35,6 @@ The crucial code is in Startup.cs and in the Controller constructors which is wh
 
 I hope this repository helps you on your journey to upgrade to ASP.NET Core...
 
+Hope this helps...
+
 [![Build Status](https://dev.azure.com/f2calv/github/_apis/build/status/f2calv.WebAppDI?branchName=master)](https://dev.azure.com/f2calv/github/_build/latest?definitionId=1&branchName=master)
