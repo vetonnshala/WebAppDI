@@ -31,6 +31,11 @@ jobs:
       SearchPattern: '**\bin\**\*.pdb'
       PublishSymbols: false
 
+  - task: VSTest@2
+    inputs:
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
     inputs:
