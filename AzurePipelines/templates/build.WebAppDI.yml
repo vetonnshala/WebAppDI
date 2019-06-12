@@ -39,5 +39,5 @@ jobs:
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
     inputs:
-      artifactName: $(projectName)-$(buildConfiguration)
+      #artifactName: $(projectName)/$(buildConfiguration)
       targetPath: $(Build.ArtifactStagingDirectory)
