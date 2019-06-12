@@ -1,0 +1,14 @@
+trigger:
+- updates/add-pipeline
+
+resources:
+- repo: self
+
+variables:
+- template: templates/variables.yml
+
+stages:
+
+- stage: Build
+  jobs:
+  - template: templates/build.WebAppDI.yml
