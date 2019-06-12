@@ -21,7 +21,7 @@ jobs:
   - task: VSBuild@1
     inputs:
       solution: $(projectName).sln
-      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).$(buildConfiguration).zip"'
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
   
@@ -34,5 +34,5 @@ jobs:
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
     inputs:
-      artifactName: $(projectName)
+      artifactName: $(buildConfiguration)/$(projectName)
       targetPath: $(Build.ArtifactStagingDirectory)
