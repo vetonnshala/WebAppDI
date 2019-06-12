@@ -1,5 +1,6 @@
 trigger:
-- master
+#- master
+- updates/yaml-tweaks
 
 resources:
 - repo: self

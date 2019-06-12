@@ -2,8 +2,8 @@ jobs:
 - job: WebAppDI
   strategy:
     matrix:
-      #Debug:
-      #  buildConfiguration: Debug
+      Debug:
+        buildConfiguration: Debug
       Release:
         buildConfiguration: Release
   pool:
@@ -30,14 +30,16 @@ jobs:
     inputs:
       SearchPattern: '**\bin\**\*.pdb'
       PublishSymbols: false
+    condition: and(succeeded(), eq(variables['buildConfiguration'], 'Debug'))
 
   - task: VSTest@2
     inputs:
       platform: $(buildPlatform)
       configuration: $(buildConfiguration)
+    condition: and(succeeded(), eq(variables['buildConfiguration'], 'Debug'))
 
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
     inputs:
-      #artifactName: $(projectName)/$(buildConfiguration)
+      artifactName: $(projectName)/$(buildConfiguration)
       targetPath: $(Build.ArtifactStagingDirectory)
