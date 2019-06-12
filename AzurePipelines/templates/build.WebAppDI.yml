@@ -2,8 +2,8 @@ jobs:
 - job: WebAppDI
   strategy:
     matrix:
-      Debug:
-        buildConfiguration: Debug
+      #Debug:
+      #  buildConfiguration: Debug
       Release:
         buildConfiguration: Release
   pool:
@@ -39,5 +39,5 @@ jobs:
   - task: PublishPipelineArtifact@0
     displayName: publish pipeline artifact
     inputs:
-      artifactName: $(projectName)
-      targetPath: $(Build.ArtifactStagingDirectory)/$(buildConfiguration)
+      artifactName: $(projectName)-$(buildConfiguration)
+      targetPath: $(Build.ArtifactStagingDirectory)
