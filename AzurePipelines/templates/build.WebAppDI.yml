@@ -14,10 +14,9 @@ jobs:
 
   - task: NuGetToolInstaller@0
     
-  #task is commented out as we have moved the csproj over to use PackageReferences
-  #- task: NuGetCommand@2
-  #  inputs:
-  #    restoreSolution: $(projectName).sln
+  - task: NuGetCommand@2
+    inputs:
+      restoreSolution: $(projectName).sln
   
   - task: VSBuild@1
     inputs:
@@ -25,7 +24,6 @@ jobs:
       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
       platform: $(buildPlatform)
       configuration: $(buildConfiguration)
-      restoreNugetPackages: true
   
   - task: PublishSymbols@2
     displayName: 'Publish symbols path'
